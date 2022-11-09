@@ -1,0 +1,16 @@
+/**
+Theme Name:  My Theme
+version: 5.1
+Author: Mr Digital
+**/
+
+
+* {
+    margin: 0;
+	padding: 0px;
+} 
+
+.margin:{
+	margin: 0px;
+}
+
