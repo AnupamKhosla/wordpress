@@ -1,0 +1,31 @@
+
+---Downloaded files---
+The import files for: Demo Content were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://healthynuske.com
+Data file = /home/u586058589/domains/healthynuske.com/public_html/wp-content/uploads/2022/02/demo-content-import-file_2022-02-22__07-23-20.xml
+Widget file = /home/u586058589/domains/healthynuske.com/public_html/wp-content/uploads/2022/02/demo-widgets-import-file_2022-02-22__07-23-20.json
+Customizer file = not defined!
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Default Sidebar : 
+
+Featured Posts - Featured Posts - Imported
+Featured Posts - Recent Posts - Imported
+Categories - Categories - Imported
+
+
+
+---ocdi/after_import---
+
