@@ -1,0 +1,31 @@
+2022-12-08T01:30:12+00:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\GoogleListingsAndAds\PluginFactory" not found in C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads\google-listings-and-ads.php:58
+Stack trace:
+#0 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(307): {closure}('')
+#1 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\laragon\www\wordpress\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\laragon\www\wordpress\wp-content\plugins\woocommerce\includes\class-woocommerce.php(196): do_action('woocommerce_loa...')
+#4 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(307): WooCommerce->on_plugins_loaded('')
+#5 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 C:\laragon\www\wordpress\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#7 C:\laragon\www\wordpress\wp-settings.php(461): do_action('plugins_loaded')
+#8 C:\laragon\www\wordpress\wp-config.php(98): require_once('C:\\laragon\\www\\...')
+#9 C:\laragon\www\wordpress\wp-load.php(50): require_once('C:\\laragon\\www\\...')
+#10 C:\laragon\www\wordpress\wp-admin\admin-ajax.php(22): require_once('C:\\laragon\\www\\...')
+#11 {main}
+  thrown in C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads\google-listings-and-ads.php on line 58
+
+2022-12-08T01:30:12+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads/src/Jobs/StartHook.php' (include_path='C:\laragon\www\wordpress\wp-content\plugins\kirki/;C:\laragon\www\wordpress\wp-content\plugins\kirki/core;.;C:/laragon/etc/php/pear') in C:\laragon\www\wordpress\wp-content\plugins\jetpack\vendor\jetpack-autoloader\class-php-autoloader.php:90
+Stack trace:
+#0 C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads\src\Jobs\UpdateProducts.php(77): Automattic\Jetpack\Autoloader\jpf11009ded9fc4592b6a05b61ce272b3c_jetpackⓥ11_5_1\PHP_Autoloader::load_class('Automattic\\WooC...')
+#1 C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads\src\Jobs\JobInitializer.php(52): Automattic\WooCommerce\GoogleListingsAndAds\Jobs\UpdateProducts->get_start_hook()
+#2 C:\laragon\www\wordpress\wp-content\plugins\google-listings-and-ads\src\Infrastructure\GoogleListingsAndAdsPlugin.php(109): Automattic\WooCommerce\GoogleListingsAndAds\Jobs\JobInitializer->register()
+#3 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(307): Automattic\WooCommerce\GoogleListingsAndAds\Infrastructure\GoogleListingsAndAdsPlugin->Automattic\WooCommerce\GoogleListingsAndAds\Infrastructure\{closure}('')
+#4 C:\laragon\www\wordpress\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#5 C:\laragon\www\wordpress\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#6 C:\laragon\www\wordpress\wp-settings.php(598): do_action('init')
+#7 C:\laragon\www\wordpress\wp-config.php(98): require_once('C:\\laragon\\www\\...')
+#8 C:\laragon\www\wordpress\wp-load.php(50): require_once('C:\\laragon\\www\\...')
+#9 C:\laragon\www\wordpress\wp-admin\admin-ajax.php(22): require_once('C:\\laragon\\www\\...')
+#10 {main}
+  thrown in C:\laragon\www\wordpress\wp-content\plugins\jetpack\vendor\jetpack-autoloader\class-php-autoloader.php on line 90
+
