@@ -1,0 +1,45 @@
+/*
+	@package sunset2-theme
+	========================
+		ADMIN SUNSET2 subpage CSS
+	========================
+*/	
+body {
+	background: gray;
+}
+
+.sunset2-general-form,
+.sunset2-sidebar-preview {
+	display:  inline-block;
+	float:  left;
+}
+.sunset2-sidebar-preview {
+	width: 280px;
+	background-color: #0a0b0c;
+	padding: 20px;
+	text-align: center;
+	margin-right: 20px;	
+}
+.sunset2-sidebar {
+	display: block;
+	text-align: center;
+}
+h1.sunset2-username,
+h2.sunset2-description {
+	font-weight: 100;
+	color: #fff;
+}
+h1.sunset2-username {
+	font-size: 24px;
+	margin:  0 0 10px;
+}
+h2.sunset2-description {
+	font-size: 13px;
+	margin: 0 0 20px;
+}
+.profile-picture img {
+	max-width: 120px;
+	heigth: auto;
+	border-radius:  50%;
+	margin-bottom: 1rem;
+}
