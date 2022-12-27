@@ -1,13 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
-	<?php wp_head() ; ?>
-</head>
-<body>
-	<h1>Hello World</h1>
-	<?php wp_footer() ; ?>
-</body>
-</html>
+<?php 
+
+	/*
+		@package sunse2-theme
+	
+	*/
+
+
+	get_header();
+?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			<?php if( have_posts() ):
+
+				while( have_posts() ): the_post();
+
+					get_template_part( 'template-parts/content', get_post_format() );
+					
+				endwhile;
+
+			endif; ?>
+
+		</main>
+	</div><!-- #primary -->
+
+<?php get_footer(); ?>

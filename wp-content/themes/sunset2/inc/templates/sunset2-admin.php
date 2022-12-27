@@ -19,7 +19,16 @@ $picture = esc_attr(get_option('profile_picture2'));
 	<div class="sunset2-sidebar">
 		<div class="image-container">
 			<div id="profile-picture-preview" class="profile-picture">
-				<img src="<?php print $picture; ?>" alt="Theme owner pic">
+				
+
+				<img src="
+				<?php 
+				if(empty($picture)) { 
+					print "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==";
+				} else { 
+					print $picture;
+				} 
+				?>" alt="Theme owner pic">
 			</div>
 		</div>
 		<h1 class="sunset2-username"><?php echo $fullName; ?></h1>
@@ -33,6 +42,6 @@ $picture = esc_attr(get_option('profile_picture2'));
 	<?php		
 		settings_fields('sunset2-settings-group');
 		do_settings_sections('sunset2_theme');
-		submit_button();
+		submit_button('Save Changes', 'primary', 'btnSubmit');
 	?>
 </form>		
