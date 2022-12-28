@@ -14,7 +14,12 @@ if( has_post_thumbnail() ):
 else: 
 	$feat_image = sunset2_get_attachment();
 endif;
-
+		$attachments = get_posts( array (
+			'post_type' => 'attachment',
+			'posts_per_page' => 1,
+			'post_parent' => get_the_ID()
+		) );
+		var_dump($attachments);
 
 ?>
 

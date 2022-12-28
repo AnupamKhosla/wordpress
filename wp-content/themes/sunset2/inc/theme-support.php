@@ -74,16 +74,20 @@ function sunset2_posted_footer() {
 
 function sunset2_get_attachment() {
 	$output = '';
-	$attachments = get_posts( array(
-		'post_type' => 'attachment',
-		'posts_per_page' => 1,
-		'post_parent' => get_the_ID()
-	) );
+	if(has_post_thumbnail() && !post_password_required() ):
+		$output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
+	else:
+		$attachments = get_posts( array (
+			'post_type' => 'attachment',
+			'posts_per_page' => 1,
+			'post_parent' => get_the_ID()
+		) );
 
-	if($attachments): 
-		foreach( $attachments as $attachment ): 
-			$output = wp_get_attachment_url( $attachment->ID );			
-		endforeach;
+		if($attachments): 
+			foreach( $attachments as $attachment ): 
+				$output = wp_get_attachment_url( $attachment->ID );			
+			endforeach;
+		endif;
 	endif;
 	wp_reset_postdata();
 	return $output;
