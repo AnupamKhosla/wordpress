@@ -72,26 +72,28 @@ function sunset2_posted_footer() {
 	return '<div class="post-footer-container"><div class="row"><div class="col-xs-12 col-sm-6">'. get_the_tag_list( '<div class="tags-list"><span class="sunset-icon sunset-tag"></span>', ' ', '</div>' ) .'</div><div class="col-xs-12 col-sm-6 text-right">'. $comments .'</div></div></div>';
 }
 
-function sunset2_get_attachment() {
+function sunset2_get_attachment($num = 1) {
 	$output = '';
-	if(has_post_thumbnail() && !post_password_required() ):
+	if( has_post_thumbnail() && $num == 1 ):
 		$output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
 	else:
-		$attachments = get_posts( array (
+		$attachments = get_posts( array(
 			'post_type' => 'attachment',
-			'posts_per_page' => 1,
+			'posts_per_page' => $num,
 			'post_parent' => get_the_ID()
 		) );
-
-		if($attachments): 
-			foreach( $attachments as $attachment ): 
-				$output = wp_get_attachment_url( $attachment->ID );			
+		if( $attachments && $num == 1 ):
+			foreach( $attachments as $attachment ):
+				$output = wp_get_attachment_url( $attachment->ID );
 			endforeach;
+		elseif( $attachments && $num > 1 ):
+			$output = $attachments;
 		endif;
+		wp_reset_postdata();
 	endif;
-	wp_reset_postdata();
 	return $output;
 }
+
 
 function sunset2_get_embedded_media( $type = array() ){
 	$content = do_shortcode( apply_filters( 'the_content', get_the_content() ) );
@@ -105,3 +107,11 @@ function sunset2_get_embedded_media( $type = array() ){
 	
 	return $output;
 }
+
+function sunset2_grab_url() {
+	if( !preg_match('/<a\s[^>]*?href=[\'"](.+?)[\'"]/i', get_the_content(), $links) ) {
+		return false;
+	}
+	return esc_url_raw( $links[1] );
+}
+

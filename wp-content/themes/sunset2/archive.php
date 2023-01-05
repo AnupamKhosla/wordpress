@@ -2,7 +2,7 @@
 
 	/*
 		@package sunse2-theme
-	
+		archive.php
 	*/
 		
 
@@ -10,7 +10,7 @@
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main archive-page" role="main">
 
 			<?php if(is_paged()): ?>
 				<div class="container text-center container-load-previous">
@@ -25,7 +25,17 @@
 			<div class="container sunset-posts-container">
 				<?php 
 					if( have_posts() ):
-						echo "<div class='page-limit' data-page='" . sunset2_check_paged() . "'>";
+				?>
+				<header class="archive-header text-center">
+					<?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						//echo type of page
+
+
+					?>
+				</header>
+				<?php
+						echo "<div class='page-limit' data-page='" . $_SERVER["REQUEST_URI"] . sunset2_check_paged() . "'>";
 						while( have_posts() ): the_post();
 							$class = 'reveal';
 							set_query_var( 'class', $class );

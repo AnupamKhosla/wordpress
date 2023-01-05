@@ -6,26 +6,21 @@
 // 			$comments = __('No Comments');
 
 
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'sunset-format-image' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( array('sunset-format-image', get_query_var('class')) ); ?>>
 
 	<header class="entry-header text-center background-image">		
 
 		<?php 
-			$attachments = get_posts( array(
-				'post_type' => 'attachment',
-				'posts_per_page' => 3,
-				'post_parent' => get_the_ID()
-			) );
-			var_dump($attachments);
-			//die();
-			// if( sunset2_get_attachment() ):
-			// 	$attatchments2 = sunset2_get_attachment(7);
-			// endif;
-			// foreach( $attatchments2 as $attatchment2 ):
-			// 	echo "img src='". $attatchment2 ."'";
-			// endforeach;
+			if( sunset2_get_attachment() ): 
+				$attachment = sunset2_get_attachment( 7 ); //forces to be array
+				foreach( $attachment as $attachment ): 
+					echo "<img src='". wp_get_attachment_url( $attachment->ID ) ."' alt=''>";
+					echo "<span class='image-caption'>". $attachment->post_excerpt ."</span>";
+				endforeach;
+			endif; 
 		?>
 
 
